@@ -1,0 +1,25 @@
+# spring.application.name=jpa
+
+server:
+  port: 8181
+
+spring:
+  application:
+    name: jpa
+  datasource:
+    url: jdbc:mysql://localhost:3306/jpa?serverTimezone=Asia/Seoul
+    username: spring
+    password: spring
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    # show-sql: true  ?? ??? ??? ???? ??
+    # ?? ?? -> ? DB? ?? ??? ??
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update # ?? DDL ?? ?? -> create? ???? ??? ???? ??? ?? ??.
+    database: mysql # DB ?? ??
+
+# swagger setting
+springdoc:
+  swagger-ui:
+    path: /myapi.html
